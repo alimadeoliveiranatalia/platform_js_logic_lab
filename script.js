@@ -113,10 +113,28 @@ const modules = [
             <pre class="bg-slate-900 text-white p-4 rounded-lg text-sm mb-4">
             if (condicao) {
               // executa se verdadeiro
+            } else if (condicao2) {
+              // executa se verdadeiro
             } else {
               // executa se falso
             }</pre>
-            <p>Há também o <strong>operador ternário condicional (ternário)</strong> se trata de um atalho para o uso do if <code>condition ? trueCode : falseCode  </code></p>
+            <p class="text-slate-600 mb-4">Há também o <strong>operador ternário condicional (ternário)</strong> se trata de um atalho para o uso do if. </p><pre class="bg-slate-900 text-white p-4 rounded-lg text-sm mb-4">
+            condition ? true : false  </pre>
+            <p class="text-slate-600 mb-4">Uma <code>switch</code> instrução verifca uma expressão que será verificada a cada caso.</p>
+            <pre class="bg-slate-900 text-white p-4 rounded-lg text-sm mb-4">
+            swich (expressao) {
+                case valor1:
+                    // executa se valor1 for verdadeiro
+                    break;
+                case valor2:
+                    // executa se valor2 for verdadeiro
+                    break;
+                default:
+                    // executa se falso
+            }
+            </pre>
+            <p class="text-slate-600 mb-4">Para conhecer mais condicionais, acesse: <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/if...else" class="text-blue-500 hover:underline" target="_blank">Condicionais em JavaScript</a></p>
+
         `,
         initialCode: `let idade = 17;
         if (idade >= 18) {
@@ -133,13 +151,33 @@ const modules = [
         description: 'Executar o mesmo código várias vezes enquanto uma condição for real.',
         theory: `
             <h2 class="text-3xl font-bold text-slate-800 mb-4">Estruturas de Repetição</h2>
-            <p class="text-slate-600 mb-4">Loops evitam repetição de código manual. Os mais comuns são <code>for</code> e <code>while</code>.</p>
-            <p class="text-slate-600 mb-4 font-semibold">O ciclo de um for:</p>
+            <p class="text-slate-600 mb-4">Loops evitam repetição de código manual. O que é chamado de iteração na linguagem de programação.</p>
+            <p class="text-slate-600 mb-4 font-semibold">O ciclo de um loop é composto por:</p>
             <ol class="list-decimal ml-6 text-slate-600 space-y-1">
                 <li>Inicialização (let i = 0)</li>
                 <li>Condição (i < 10)</li>
                 <li>Incremento (i++)</li>
             </ol>
+            <p class="text-slate-600 mb-4">Em JavaScript temos as seguintes instruções: <code>for</code>, <code>while</code> e <code>do...while</code>.</p>
+            <h4 class="font-bold">For</h4>
+            <pre class="bg-slate-900 text-white p-4 rounded-lg text-sm mb-4">
+            for(iniciador; condição; incremento) {
+                // código
+            }
+            </pre>
+            <h4 class="font-bold">While</h4>
+            <pre class="bg-slate-900 text-white p-4 rounded-lg text-sm mb-4">
+            while (condicao) {
+                // código
+            }
+            </pre>
+            <h4 class="font-bold">do ... while</h4>
+            <pre class="bg-slate-900 text-white p-4 rounded-lg text-sm mb-4">
+            do {
+                // código
+            } while (condicao);
+            </pre>
+            <p class="text-slate-600 mb-4">Para conhecer mais sobre loops, acesse: <a href="https://javascript.info/while-for" class="text-blue-500 hover:underline" target="_blank">Loops em JavaScript</a></p>
         `,
         initialCode: `console.log("Contagem regressiva:");
 
@@ -156,12 +194,39 @@ const modules = [
         theory: `
             <h2 class="text-3xl font-bold text-slate-800 mb-4">Arrays</h2>
             <p class="text-slate-600 mb-4">Arrays são listas indexadas. O primeiro item sempre está na posição <strong>0</strong>.</p>
+            <img  src="./assets/arrays_js.svg" />
             <p class="text-slate-600 mb-4">Métodos importantes:</p>
             <ul class="list-disc ml-6 text-slate-600 mb-4">
                 <li><code>push()</code>: Adiciona ao final.</li>
                 <li><code>pop()</code>: Remove do final.</li>
                 <li><code>length</code>: Tamanho da lista.</li>
             </ul>
+            <p class="text-slate-600 mb-4">Para conhecer mais sobre arrays, acesse: <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array" class="text-blue-500 hover:underline" target="_blank">Arrays em JavaScript</a></p>
+        `,
+        initialCode: `let frutas = ["Maçã", "Banana", "Laranja"];
+
+        console.log("Lista completa:", frutas);
+        console.log("Primeira fruta:", frutas[0]);
+
+        frutas.push("Uva");
+        console.log("Após o push:", frutas);
+        console.log("Total de itens:", frutas.length);`
+    },
+    {
+        id: 'funcoes',
+        title: '7. Funções',
+        description: 'Isolando nosso código em blocos reutilizáveis.',
+        theory: `
+            <h2 class="text-3xl font-bold text-slate-800 mb-4">Funções</h2>
+            <p class="text-slate-600 mb-4">Uma função é um código organizado e reaproveitado que é capaz de efetuar uma determinada ação.</p>
+            <img  src="./assets/arrays_js.svg" />
+            <p class="text-slate-600 mb-4">Métodos importantes:</p>
+            <ul class="list-disc ml-6 text-slate-600 mb-4">
+                <li><code>push()</code>: Adiciona ao final.</li>
+                <li><code>pop()</code>: Remove do final.</li>
+                <li><code>length</code>: Tamanho da lista.</li>
+            </ul>
+            <p class="text-slate-600 mb-4">Para conhecer mais sobre funções, acesse: <a href="https://javascript.info/function-basics" class="text-blue-500 hover:underline" target="_blank">Funções em JavaScript</a></p>
         `,
         initialCode: `let frutas = ["Maçã", "Banana", "Laranja"];
 
@@ -174,7 +239,7 @@ const modules = [
     },
     {
         id: 'dom',
-        title: '7. Manipulação da DOM',
+        title: '8. Manipulação da DOM',
         description: 'Alterar o HTML e CSS da página usando JavaScript.',
         theory: `
             <h2 class="text-3xl font-bold text-slate-800 mb-4">Manipulação da DOM</h2>
